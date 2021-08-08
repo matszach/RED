@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://src/levels/Level_01.gd" type="Script" id=1]
+[ext_resource path="res://src/levels/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://res/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/objects/Lamp.tscn" type="PackedScene" id=4]
@@ -25,7 +25,7 @@ position = Vector2( 255.427, 255.102 )
 [node name="Lamps" type="Node" parent="."]
 
 [node name="Lamp" parent="Lamps" instance=ExtResource( 4 )]
-position = Vector2( 824, 200 )
+position = Vector2( 824, 203 )
 
 [node name="Lamp2" parent="Lamps" instance=ExtResource( 4 )]
 position = Vector2( 584, 888 )

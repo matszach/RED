@@ -14,5 +14,4 @@ func set_player_camera_limits() -> void:
 	camera.limit_bottom = map_limits.end.y * map_cellsize.y
 
 func _ready() -> void:
-	pass
-	# set_player_camera_limits()
+	set_player_camera_limits()
