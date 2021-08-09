@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "Pushable",
 "language": "GDScript",
 "path": "res://src/objects/Pushable.gd"
+}, {
+"base": "StaticBody2D",
+"class": "plant",
+"language": "GDScript",
+"path": "res://src/objects/Plant.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
 "BaseLevel": "",
 "Enemy": "",
 "Player": "",
-"Pushable": ""
+"Pushable": "",
+"plant": ""
 }
 
 [application]
