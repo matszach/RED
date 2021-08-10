@@ -59,6 +59,7 @@ position = Vector2( 1169, 72 )
 
 [node name="DoorLarge" parent="Doors" instance=ExtResource( 11 )]
 position = Vector2( 800, 548 )
+slide_by = Vector2( 125, 0 )
 switches = [ NodePath("../../Buttons/PressureButton"), NodePath("../../Buttons/PressureButton2") ]
 
 [node name="Decor" type="Node" parent="."]

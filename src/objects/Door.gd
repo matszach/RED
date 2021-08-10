@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var slide_by: Vector2 = Vector2(100, 0)
+export var slide_speed_ratio: float = 5
 export var switches: Array = []
 
 var _switches: Array = []
@@ -23,7 +24,7 @@ func _check_switch_condition() -> void:
 	
 func _move() -> void:
 	var position_target = position_open if open_state else position_closed
-	var movement = (position_target - position) * 3
+	var movement = (position_target - position) * slide_speed_ratio
 	move_and_slide(movement)
 
 func _process(delta: float) -> void:
