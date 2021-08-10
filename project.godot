@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/actors/Actor.gd"
 }, {
+"base": "SwitchObjectButton",
+"class": "AlternatingButtond",
+"language": "GDScript",
+"path": "res://src/objects/switches/AlternatingButton.gd"
+}, {
 "base": "Node2D",
 "class": "BaseLevel",
 "language": "GDScript",
@@ -22,7 +27,7 @@ _global_script_classes=[ {
 "base": "SwitchObjectButton",
 "class": "ClickButton",
 "language": "GDScript",
-"path": "res://ClickButton.gd"
+"path": "res://src/objects/switches/ClickButton.gd"
 }, {
 "base": "Actor",
 "class": "Enemy",
@@ -37,36 +42,43 @@ _global_script_classes=[ {
 "base": "SwitchObjectButton",
 "class": "PressureButton",
 "language": "GDScript",
-"path": "res://src/objects/PressureButton.gd"
+"path": "res://src/objects/switches/PressureButton.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Pushable",
 "language": "GDScript",
-"path": "res://src/objects/Pushable.gd"
+"path": "res://src/objects/pushables/Pushable.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Screen",
+"language": "GDScript",
+"path": "res://Screen.gd"
 }, {
 "base": "Area2D",
 "class": "SwitchObject",
 "language": "GDScript",
-"path": "res://src/objects/SwitchObject.gd"
+"path": "res://src/objects/switches/SwitchObject.gd"
 }, {
 "base": "SwitchObject",
 "class": "SwitchObjectButton",
 "language": "GDScript",
-"path": "res://src/objects/SwitchObjectButton.gd"
+"path": "res://src/objects/switches/SwitchObjectButton.gd"
 }, {
 "base": "StaticBody2D",
 "class": "plant",
 "language": "GDScript",
-"path": "res://src/objects/Plant.gd"
+"path": "res://src/objects/decor/Plant.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
+"AlternatingButtond": "",
 "BaseLevel": "",
 "ClickButton": "",
 "Enemy": "",
 "Player": "",
 "PressureButton": "",
 "Pushable": "",
+"Screen": "",
 "SwitchObject": "",
 "SwitchObjectButton": "",
 "plant": ""
@@ -117,6 +129,11 @@ move_right={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+ ]
+}
+restart_level={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
  ]
 }
 

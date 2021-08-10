@@ -1,16 +1,25 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://src/levels/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://res/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/objects/Lamp.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/objects/CrateMedium.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/objects/CrateSmall.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/objects/CrateLarge.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/objects/CrateHuge.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/objects/Plant.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/objects/PressureButton.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/objects/DoorLarge.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/objects/decor/Lamp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/objects/pushables/CrateMedium.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/objects/pushables/CrateSmall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/objects/pushables/CrateLarge.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/objects/pushables/CrateHuge.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/objects/decor/Plant.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/objects/switches/PressureButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/objects/doors/DoorLarge.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/objects/switches/ClickButton.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/objects/switches/AlternatingButton.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/objects/decor/PillarLarge.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/objects/decor/PillarSmall.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/objects/decor/PillarHuge.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/objects/decor/PillarMedium.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/objects/decor/BarsLong.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/objects/decor/BarsShort.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/objects/decor/Screen.tscn" type="PackedScene" id=20]
 
 [node name="Level_01" type="Node2D"]
 script = ExtResource( 1 )
@@ -29,6 +38,12 @@ position = Vector2( 1375, 292 )
 
 [node name="PressureButton2" parent="Buttons" instance=ExtResource( 10 )]
 position = Vector2( 1376, 407 )
+
+[node name="ClickButton" parent="Buttons" instance=ExtResource( 12 )]
+position = Vector2( 1027, 388 )
+
+[node name="AlternatingButton" parent="Buttons" instance=ExtResource( 13 )]
+position = Vector2( 1179, 158 )
 
 [node name="Characters" type="Node" parent="."]
 
@@ -60,27 +75,54 @@ position = Vector2( 1169, 72 )
 [node name="DoorLarge" parent="Doors" instance=ExtResource( 11 )]
 position = Vector2( 800, 548 )
 slide_by = Vector2( 125, 0 )
-switches = [ NodePath("../../Buttons/PressureButton"), NodePath("../../Buttons/PressureButton2") ]
+switches = [ NodePath("../../Buttons/PressureButton"), NodePath("../../Buttons/PressureButton2"), NodePath("../../Buttons/ClickButton"), NodePath("../../Buttons/AlternatingButton") ]
 
 [node name="Decor" type="Node" parent="."]
-
-[node name="StaticBody2D" parent="Decor" instance=ExtResource( 9 )]
-position = Vector2( 494, 213 )
-
-[node name="StaticBody2D2" parent="Decor" instance=ExtResource( 9 )]
-position = Vector2( 980, 485 )
-
-[node name="StaticBody2D3" parent="Decor" instance=ExtResource( 9 )]
-position = Vector2( 1083, 490 )
-
-[node name="StaticBody2D4" parent="Decor" instance=ExtResource( 9 )]
-position = Vector2( 1175, 490 )
-
-[node name="StaticBody2D5" parent="Decor" instance=ExtResource( 9 )]
-position = Vector2( 1273, 481 )
 
 [node name="Lamp" parent="Decor" instance=ExtResource( 4 )]
 position = Vector2( 767, 200 )
 
 [node name="Lamp2" parent="Decor" instance=ExtResource( 4 )]
 position = Vector2( 769, 888 )
+
+[node name="Plant" parent="Decor" instance=ExtResource( 9 )]
+position = Vector2( 991, 489 )
+
+[node name="PillarLarge" parent="Decor" instance=ExtResource( 14 )]
+position = Vector2( 1301, 476 )
+
+[node name="PillarHuge" parent="Decor" instance=ExtResource( 16 )]
+position = Vector2( 1232, 466 )
+
+[node name="PillarSmall" parent="Decor" instance=ExtResource( 15 )]
+position = Vector2( 1388, 486 )
+
+[node name="PillarSmall2" parent="Decor" instance=ExtResource( 15 )]
+position = Vector2( 1446, 456 )
+
+[node name="PillarMedium" parent="Decor" instance=ExtResource( 17 )]
+position = Vector2( 1355, 485 )
+
+[node name="Plant3" parent="Decor" instance=ExtResource( 9 )]
+position = Vector2( 518, 208 )
+
+[node name="Plant2" parent="Decor" instance=ExtResource( 9 )]
+position = Vector2( 1100, 487 )
+
+[node name="Plant4" parent="Decor" instance=ExtResource( 9 )]
+position = Vector2( 652, 303 )
+
+[node name="PillarLarge2" parent="Decor" instance=ExtResource( 14 )]
+position = Vector2( 193, 342 )
+
+[node name="BarsLong" parent="Decor" instance=ExtResource( 18 )]
+position = Vector2( 827, 832 )
+
+[node name="Lamp3" parent="Decor" instance=ExtResource( 4 )]
+position = Vector2( 1464, 504 )
+
+[node name="BarsShort" parent="Decor" instance=ExtResource( 19 )]
+position = Vector2( 891, 640 )
+
+[node name="Screen" parent="." instance=ExtResource( 20 )]
+position = Vector2( 615, 605 )

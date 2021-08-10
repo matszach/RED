@@ -2,7 +2,8 @@ extends SwitchObjectButton
 
 class_name ClickButton
 	
+# set to on when a body over and stays on forever
 func _update_state() -> void:
 	if not state:
 		state = bodies_over.size() > 0
-		$button.frame = 3 if state else 2
+		$button.frame = 3

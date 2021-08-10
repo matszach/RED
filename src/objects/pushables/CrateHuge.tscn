@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/crate.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
+
+class_name Pushable
+
+var is_pushable: bool = true
+var velocity: Vector2 = Vector2.ZERO
+var pushing_bodies: Array = []
+
+export var dampen_ratio: float = 0.9
+export var on_push_velocity: float = 100
+export var bounceback_ratio: float = 0.1
+
+func _ready() -> void:
+	var push_detector: Area2D = $PushDetector
+	push_detector.connect('body_entered', self, '_on_PushDetector_body_entered')
+	push_detector.connect('body_exited', self, '_on_PushDetector_body_exited')
+		
+func _on_PushDetector_body_entered(body: KinematicBody2D) -> void:
+	if not body:
+		return
+	if body is Player or 'is_pushable' in body:
+		pushing_bodies.append(body)
+
+func _on_PushDetector_body_exited(body: KinematicBody2D) -> void:
+	pushing_bodies.erase(body)
+	
+func _get_pushed() -> void:
+	for body in pushing_bodies:
+		var direction = position - body.position
+		direction = direction.normalized()
+		if abs(direction.x) < 0.2:
+			direction.x = 0
+		if abs(direction.y) < 0.2:
+			direction.y = 0
+		var force = direction * on_push_velocity
+		if 'is_pushable' in body:
+			force *= bounceback_ratio
+		velocity += force
+		
+func _apply_traction() -> void:
+	velocity *= dampen_ratio
+	
+func _clamp_velocity() -> void:
+	velocity = velocity.clamped(on_push_velocity)
+	
+func _physics_process(delta: float) -> void:
+	_get_pushed()
+	_apply_traction()
+	_clamp_velocity()
+	velocity = move_and_slide(velocity)
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 52, 52 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( -52, -52, 52, -52, 52, 52, -52, 52 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 55, 55 )
+
+[node name="CrateHuge" type="KinematicBody2D"]
+light_mask = 4
+collision_layer = 4
+collision_mask = 15
+script = SubResource( 1 )
+on_push_velocity = 40.0
+
+[node name="crate" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 3 )
+
+[node name="PushDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDetector"]
+shape = SubResource( 4 )
