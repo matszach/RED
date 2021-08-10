@@ -3,9 +3,9 @@ extends Node2D
 class_name BaseLevel
 
 func set_player_camera_limits() -> void:
-	var player: Player = get_node('Player')
-	var camera: Camera2D = player.get_node('Camera2D')
-	var tilemap: TileMap = get_node('TileMap')
+	var player: Player = $Characters/Player
+	var camera: Camera2D = $Characters/Player/Camera2D
+	var tilemap: TileMap = $TileMap
 	var map_limits = tilemap.get_used_rect()
 	var map_cellsize = tilemap.cell_size
 	camera.limit_left = map_limits.position.x * map_cellsize.x
