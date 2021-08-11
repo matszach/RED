@@ -65,7 +65,7 @@ position = Vector2( 264, 712 )
 rotation = 1.5708
 
 [node name="Lamp2" parent="Decor" instance=ExtResource( 1 )]
-position = Vector2( 287, 1361 )
+position = Vector2( 264, 1336 )
 
 [node name="PillarSmall2" parent="Decor" instance=ExtResource( 2 )]
 position = Vector2( 640, 896 )
