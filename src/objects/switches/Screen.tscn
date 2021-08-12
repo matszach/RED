@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/screen.png" type="Texture" id=1]
 [ext_resource path="res://src/objects/switches/Screen.gd" type="Script" id=2]
@@ -20,11 +20,27 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "show_text"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24, 16 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 44, 36 )
+extents = Vector2( 55, 45 )
 
 [node name="Screen" type="StaticBody2D"]
 collision_layer = 4
@@ -36,9 +52,12 @@ texture = ExtResource( 1 )
 hframes = 4
 frame = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayerSprite" type="AnimationPlayer" parent="."]
 autoplay = "text_animation"
 anims/text_animation = SubResource( 1 )
+
+[node name="AnimationPlayerText" type="AnimationPlayer" parent="."]
+anims/show_text = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
@@ -48,6 +67,19 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerNearbyDetector"]
 shape = SubResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 300.0
+margin_bottom = 400.0
+visible_characters = 0
+percent_visible = 0.0
+text = "Hello there"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="body_entered" from="PlayerNearbyDetector" to="." method="_on_PlayerNearbyDetector_body_entered"]
 [connection signal="body_exited" from="PlayerNearbyDetector" to="." method="_on_PlayerNearbyDetector_body_exited"]
