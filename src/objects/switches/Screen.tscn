@@ -20,11 +20,11 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "show_text"
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("RichTextLabel:percent_visible")
+tracks/0/path = NodePath("LabelHolder/RichTextLabel:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -36,10 +36,10 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 24, 16 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 55, 45 )
 
 [node name="Screen" type="StaticBody2D"]
@@ -57,18 +57,20 @@ autoplay = "text_animation"
 anims/text_animation = SubResource( 1 )
 
 [node name="AnimationPlayerText" type="AnimationPlayer" parent="."]
-anims/show_text = SubResource( 5 )
+anims/show_text = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="PlayerNearbyDetector" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerNearbyDetector"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="LabelHolder" type="Node2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LabelHolder"]
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 300.0

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/levels/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://res/tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/objects/decor/Lamp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/objects/switches/Screen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/objects/switches/LevelExit.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/levels/Level_02.tscn" type="PackedScene" id=22]
 
@@ -41,3 +42,9 @@ position = Vector2( 952, 264 )
 
 [node name="Lamp2" parent="Decor" instance=ExtResource( 4 )]
 position = Vector2( 776, 824 )
+
+[node name="Screen" parent="Decor" instance=ExtResource( 5 )]
+position = Vector2( 498, 275 )
+rotation = 0.523599
+value_key = "01_01"
+relative_placement = Vector2( 40, -70 )

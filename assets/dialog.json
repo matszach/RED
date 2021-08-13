@@ -1,3 +1,8 @@
 {
-	"test": "TEST\nTEST\nTEST"
+	"test": "TEST\nTEST\nTEST",
+	"01_01": "Project: RED\nVersion: 0.12.1",
+	"02_01": "02_01",
+	"03_01": "03_01",	
+	"04_01": "04_01",
+	"05_01": "05_01"
 }

@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/actors/Turret.gd" type="Script" id=1]
+[ext_resource path="res://assets/turret.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28, 28 )
+
+[node name="Turret" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 11
+script = ExtResource( 1 )
+
+[node name="turret_body" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Gun" type="Node2D" parent="."]
+
+[node name="turret_gun" type="Sprite" parent="Gun"]
+position = Vector2( 2, 0 )
+texture = ExtResource( 2 )
+hframes = 3
+frame = 1
+
+[node name="BulletSpawnPosition" type="Position2D" parent="Gun"]
+position = Vector2( 50, 0 )
+
+[node name="SightRange" type="Area2D" parent="Gun"]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gun/SightRange"]
+position = Vector2( 1, 0 )
+polygon = PoolVector2Array( 250, -430, 430, -250, 500, 0, 430, 250, 250, 430, 0, 0 )
+
+[node name="Timer" type="Timer" parent="Gun"]
+one_shot = true
+
+[connection signal="body_entered" from="Gun/SightRange" to="." method="_on_SightRange_body_entered"]
+[connection signal="body_exited" from="Gun/SightRange" to="." method="_on_SightRange_body_exited"]
