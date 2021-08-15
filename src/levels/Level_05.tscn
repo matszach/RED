@@ -48,6 +48,9 @@ rotation = 1.5708
 
 [node name="Pushables" type="Node" parent="."]
 
+[node name="PushableCrate2x2" parent="Pushables" instance=ExtResource( 4 )]
+position = Vector2( 672, 736 )
+
 [node name="Doors" type="Node" parent="."]
 
 [node name="DoorMedium" parent="Doors" instance=ExtResource( 7 )]
@@ -80,6 +83,3 @@ rotation = 1.5708
 [node name="Lamp2" parent="Decor" instance=ExtResource( 2 )]
 position = Vector2( 1592, 584 )
 rotation = 1.5708
-
-[node name="PushableCrate2x2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 672, 736 )
