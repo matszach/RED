@@ -1,5 +1,6 @@
 {
-	"test": "TEST\nTEST\nTEST",
+	"TEST_TURRETS": "Turrets testing area",
+	"TEST_PUSHABLES": "Pushables testing area",
 	"01_01": "Project: RED\nVersion: 0.12.1",
 	"02_01": "02_01",
 	"03_01": "03_01",	

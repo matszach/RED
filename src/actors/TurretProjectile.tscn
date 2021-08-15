@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/turret.png" type="Texture" id=1]
+[ext_resource path="res://src/actors/TurretProjectile.gd" type="Script" id=2]
+[ext_resource path="res://addons/Trail/trail_2d.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 3.0
+height = 4.0
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[node name="TurretProjectile" type="Area2D"]
+collision_layer = 16
+collision_mask = 13
+script = ExtResource( 2 )
+
+[node name="turret" type="Sprite" parent="."]
+position = Vector2( 12, 0 )
+texture = ExtResource( 1 )
+hframes = 4
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Trail2D" type="Line2D" parent="."]
+points = PoolVector2Array( -30, 0, 0, 0 )
+width = 8.0
+width_curve = SubResource( 2 )
+default_color = Color( 1, 0, 0, 0.392157 )
+script = ExtResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_TurretProjectile_body_entered"]

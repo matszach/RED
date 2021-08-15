@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/objects/switches/LevelExit.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/objects/pushables/CrateLarge.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/objects/pushables/CrateMedium.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/objects/pushables/PushableCrate1x3.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/objects/decor/Plant.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/objects/switches/ClickButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/objects/doors/DoorLarge.tscn" type="PackedScene" id=6]
@@ -41,11 +40,9 @@ position = Vector2( 352, 352 )
 
 [node name="Pushables" type="Node" parent="."]
 
-[node name="CrateMedium" parent="Pushables" instance=ExtResource( 3 )]
-position = Vector2( 859, 692 )
-
-[node name="CrateLarge" parent="Pushables" instance=ExtResource( 2 )]
-position = Vector2( 846, 580 )
+[node name="PushableCrate1x3" parent="Pushables" instance=ExtResource( 2 )]
+position = Vector2( 864, 672 )
+rotation = 1.5708
 
 [node name="Doors" type="Node" parent="."]
 
@@ -61,4 +58,4 @@ switches = [ NodePath("../../Buttons/ClickButton") ]
 position = Vector2( 878, 518 )
 
 [node name="Lamp" parent="Decor" instance=ExtResource( 7 )]
-position = Vector2( 712, 608 )
+position = Vector2( 712, 611 )

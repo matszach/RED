@@ -2,9 +2,6 @@ extends Actor
 
 class_name Player
 
-func _ready() -> void:
-	speed = 300
-
 func _handle_move() -> void:
 	var up_down = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	var left_right = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -17,6 +14,10 @@ func _handle_move() -> void:
 func _turn_to_mouse() -> void:
 	var cursor_pos = get_local_mouse_position()
 	rotation += cursor_pos.angle()
+	
+func _process(delta: float) -> void:
+	if not health.alive():
+		get_tree().reload_current_scene()
 	
 func _physics_process(delta: float) -> void:
 	_handle_move()

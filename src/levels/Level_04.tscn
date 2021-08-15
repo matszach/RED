@@ -4,7 +4,7 @@
 [ext_resource path="res://src/objects/decor/PillarSmall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/objects/doors/DoorLarge.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/objects/switches/LevelExit.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/objects/pushables/CrateMedium.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/objects/pushables/PushableCrate1x1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/objects/switches/PressureButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/objects/decor/Plant.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/levels/Level_05.tscn" type="PackedScene" id=8]
@@ -12,7 +12,7 @@
 [ext_resource path="res://res/tileset.tres" type="TileSet" id=21]
 [ext_resource path="res://src/levels/BaseLevel.gd" type="Script" id=22]
 
-[node name="Level_EMPTY" type="Node2D"]
+[node name="Level_04" type="Node2D"]
 script = ExtResource( 22 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -41,7 +41,7 @@ rotation = 1.5708
 
 [node name="Pushables" type="Node" parent="."]
 
-[node name="CrateMedium" parent="Pushables" instance=ExtResource( 5 )]
+[node name="PushableCrate1x1" parent="Pushables" instance=ExtResource( 5 )]
 position = Vector2( 416, 864 )
 
 [node name="Doors" type="Node" parent="."]

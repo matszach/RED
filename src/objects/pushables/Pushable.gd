@@ -28,10 +28,10 @@ func _get_pushed() -> void:
 	for body in pushing_bodies:
 		var direction = position - body.position
 		direction = direction.normalized()
-		if abs(direction.x) < 0.2:
-			direction.x = 0
-		if abs(direction.y) < 0.2:
+		if abs(direction.x) > abs(direction.y):
 			direction.y = 0
+		else:
+			direction.x = 0
 		var force = direction * on_push_velocity
 		if 'is_pushable' in body:
 			force *= bounceback_ratio
