@@ -10,6 +10,8 @@ extents = Vector2( 64, 12 )
 polygon = PoolVector2Array( -64, -12, 64, -12, 64, 12, -64, 12 )
 
 [node name="DoorMedium" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="door" type="Sprite" parent="."]

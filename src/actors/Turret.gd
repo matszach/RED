@@ -6,6 +6,7 @@ onready var player_ref: Player
 onready var gun: Node = $Gun
 onready var shoot_timer: Timer = $Gun/Timer
 onready var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+onready var angle_offset: float = transform.get_rotation()
 export var rotation_rate: float = 0.03
 export var fire_rate: float = 0.10
 export var clockwise: bool = true
@@ -13,7 +14,7 @@ export var bullet_spread: float = PI/30
 
 func rotate_towards_player() -> bool:
 	var dir = position.direction_to(player_ref.position)
-	var angle = dir.angle() - gun.rotation
+	var angle = dir.angle() - gun.rotation - angle_offset
 	gun.rotation = fmod(gun.rotation, TAU)
 	if angle > PI:
 		angle -= TAU
@@ -38,7 +39,7 @@ func fire_bullet() -> void:
 	var projectile = preload("res://src/actors/TurretProjectile.tscn").instance()
 	projectile.position = gun.get_node("BulletSpawnPosition").global_position
 	get_tree().get_root().add_child(projectile)
-	var shoot_direction = gun.rotation - PI/4 + rng.randf_range(-bullet_spread, bullet_spread)
+	var shoot_direction = gun.rotation - PI/4 + rng.randf_range(-bullet_spread, bullet_spread) + angle_offset
 	projectile.fire(shoot_direction)
 	
 func idle_rotate() -> void:
