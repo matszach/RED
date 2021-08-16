@@ -4,7 +4,7 @@
 [ext_resource path="res://src/objects/pushables/Pushable.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 92, 92 )
+extents = Vector2( 91, 91 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -92, -92, 92, -92, 92, 92, -92, 92 )

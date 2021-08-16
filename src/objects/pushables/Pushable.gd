@@ -6,7 +6,7 @@ var is_pushable: bool = true
 var velocity: Vector2 = Vector2.ZERO
 var pushing_bodies: Array = []
 
-export var dampen_ratio: float = 0.9
+export var dampen_ratio: float = 0.5
 export var on_push_velocity: float = 100
 export var bounceback_ratio: float = 0.1
 
@@ -45,6 +45,7 @@ func _clamp_velocity() -> void:
 	
 func _physics_process(delta: float) -> void:
 	_get_pushed()
-	_apply_traction()
 	_clamp_velocity()
 	velocity = move_and_slide(velocity)
+	_apply_traction()
+	
