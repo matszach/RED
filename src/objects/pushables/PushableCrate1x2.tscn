@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/pushable.png" type="Texture" id=1]
 [ext_resource path="res://src/objects/pushables/Pushable.gd" type="Script" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 59, 27 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -60, -28, 60, -28, 60, 28, -60, 28 )
@@ -24,9 +21,8 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 128, 128, 64 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 4
-shape = SubResource( 1 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -50, -28, 50, -28, 60, -23, 60, 23, 50, 28, -50, 28, -60, 23, -60, -23 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 2 )
