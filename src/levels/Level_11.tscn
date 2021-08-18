@@ -24,6 +24,9 @@ tile_data = PoolIntArray( -196609, 0, 0, -262144, 0, 1, -262143, 0, 1, -262142, 
 
 [node name="LevelExit" type="Node" parent="."]
 
+[node name="LevelExit" parent="LevelExit" instance=ExtResource( 8 )]
+position = Vector2( 1248, 992 )
+
 [node name="Buttons" type="Node" parent="."]
 
 [node name="PressureButton" parent="Buttons" instance=ExtResource( 4 )]
@@ -74,6 +77,3 @@ position = Vector2( 288, 1056 )
 
 [node name="Plant2" parent="Decor" instance=ExtResource( 5 )]
 position = Vector2( 928, 288 )
-
-[node name="LevelExit" parent="Decor/Plant2" instance=ExtResource( 8 )]
-position = Vector2( 320, 704 )
