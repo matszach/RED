@@ -47,4 +47,4 @@ position = Vector2( 776, 824 )
 position = Vector2( 498, 275 )
 rotation = 0.523599
 value_key = "01_01"
-relative_placement = Vector2( 40, -70 )
+relative_placement = Vector2( 40, -90 )
