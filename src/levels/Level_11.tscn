@@ -14,6 +14,7 @@
 [ext_resource path="res://src/levels/BaseLevel.gd" type="Script" id=22]
 
 [node name="Level_11" type="Node2D"]
+position = Vector2( 13, 7 )
 script = ExtResource( 22 )
 
 [node name="TileMap" type="TileMap" parent="."]
