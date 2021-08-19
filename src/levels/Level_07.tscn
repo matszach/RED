@@ -49,12 +49,18 @@ position = Vector2( 352, 667 )
 
 [node name="PushableCrate1x1" parent="Pushables" instance=ExtResource( 4 )]
 position = Vector2( 800, 544 )
+dampen_ratio = 0.9
+bounceback_ratio = 0.1
 
 [node name="PushableCrate1x2" parent="Pushables" instance=ExtResource( 4 )]
 position = Vector2( 800, 672 )
+dampen_ratio = 0.9
+bounceback_ratio = 0.1
 
 [node name="PushableCrate1x3" parent="Pushables" instance=ExtResource( 4 )]
 position = Vector2( 800, 800 )
+dampen_ratio = 0.9
+bounceback_ratio = 0.1
 
 [node name="Doors" type="Node" parent="."]
 

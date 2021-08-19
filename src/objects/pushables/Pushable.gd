@@ -6,7 +6,7 @@ var is_pushable: bool = true
 var velocity: Vector2 = Vector2.ZERO
 var pushing_bodies: Array = []
 
-export var dampen_ratio: float = 0.5
+export var dampen_ratio: float = 0.9
 export var on_push_velocity: float = 100
 export var bounceback_ratio: float = 0.1
 

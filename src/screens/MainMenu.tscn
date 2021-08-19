@@ -475,26 +475,26 @@ __meta__ = {
 }
 
 [node name="NewGameButton" parent="VBoxContainer" instance=ExtResource( 1 )]
-margin_right = 256.0
+margin_right = 255.0
 margin_bottom = 43.0
 
 [node name="ContinueButton" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 47.0
-margin_right = 256.0
+margin_right = 255.0
 margin_bottom = 90.0
 disabled = true
 text = "Continue"
 
 [node name="OptionsButton" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 94.0
-margin_right = 256.0
+margin_right = 255.0
 margin_bottom = 137.0
 disabled = true
 text = "Options"
 
 [node name="ExitButton" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 141.0
-margin_right = 256.0
+margin_right = 255.0
 margin_bottom = 184.0
 text = "EXIT"
 

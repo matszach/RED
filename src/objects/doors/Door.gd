@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var slide_by: Vector2 = Vector2(100, 0)
 export var slide_speed_ratio: float = 5
 export var switches: Array = []
+export var inverted: bool = false
 
 var _switches: Array = []
 var open_state: bool = false
@@ -23,7 +24,8 @@ func _check_switch_condition() -> void:
 	open_state = new_open_state
 	
 func _move() -> void:
-	var position_target = position_open if open_state else position_closed
+	var to_closed = open_state != inverted
+	var position_target = position_open if to_closed else position_closed
 	var movement = (position_target - position) * slide_speed_ratio
 	move_and_slide(movement)
 

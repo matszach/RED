@@ -43,6 +43,8 @@ position = Vector2( 299, 290 )
 
 [node name="PushableCrate1x1" parent="Pushables" instance=ExtResource( 4 )]
 position = Vector2( 425, 1123 )
+dampen_ratio = 0.2
+bounceback_ratio = 0.1
 
 [node name="PushableCrate2x2" parent="Pushables" instance=ExtResource( 7 )]
 position = Vector2( 378, 1251 )

@@ -54,6 +54,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/screens/MainMenu.gd"
 }, {
+"base": "Pushable",
+"class": "MovingPushable",
+"language": "GDScript",
+"path": "res://src/objects/pushables/MovingPushable.gd"
+}, {
 "base": "Actor",
 "class": "Player",
 "language": "GDScript",
@@ -109,6 +114,7 @@ _global_script_class_icons={
 "Health": "",
 "LevelExit": "",
 "MainMenu": "",
+"MovingPushable": "",
 "Player": "",
 "PressureButton": "",
 "Pushable": "",
