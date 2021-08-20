@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/gui/PButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/gui-title.png" type="Texture" id=2]
+[ext_resource path="res://res/font_large.tres" type="DynamicFont" id=2]
 [ext_resource path="res://src/screens/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://assets/bg-1.png" type="Texture" id=4]
 
 [sub_resource type="Theme" id=1]
 Button/colors/font_color = Color( 1, 1, 1, 1 )
@@ -435,67 +436,76 @@ WindowDialog/styles/panel = null
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -2.0
-margin_right = 5.0
-margin_bottom = -21.0
+margin_right = 10.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="gui-title" type="Sprite" parent="HBoxContainer"]
-position = Vector2( -300, -86 )
-texture = ExtResource( 2 )
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.3
-anchor_top = 0.6
+anchor_top = 0.4
 anchor_right = 0.3
 anchor_bottom = 0.6
 margin_left = -128.0
 margin_top = -128.0
-margin_right = 128.0
-margin_bottom = 128.0
+margin_right = 290.0
+margin_bottom = -4.0
 theme = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 418.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 4
+custom_constants/shadow_as_outline = 4
+text = "RED"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="NewGameButton" parent="VBoxContainer" instance=ExtResource( 1 )]
-margin_right = 255.0
-margin_bottom = 43.0
+margin_top = 120.0
+margin_right = 418.0
+margin_bottom = 163.0
 
 [node name="ContinueButton" parent="VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 47.0
-margin_right = 255.0
-margin_bottom = 90.0
+margin_top = 167.0
+margin_right = 418.0
+margin_bottom = 210.0
 disabled = true
 text = "Continue"
 
 [node name="OptionsButton" parent="VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 94.0
-margin_right = 255.0
-margin_bottom = 137.0
+margin_top = 214.0
+margin_right = 418.0
+margin_bottom = 257.0
 disabled = true
 text = "Options"
 
 [node name="ExitButton" parent="VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 141.0
-margin_right = 255.0
-margin_bottom = 184.0
+margin_top = 261.0
+margin_right = 418.0
+margin_bottom = 304.0
 text = "EXIT"
 
 [connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
