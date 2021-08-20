@@ -12,6 +12,11 @@ func set_player_camera_limits() -> void:
 	camera.limit_right = map_limits.end.x * map_cellsize.x - 20
 	camera.limit_top = map_limits.position.y * map_cellsize.y + 20
 	camera.limit_bottom = map_limits.end.y * map_cellsize.y +- 20
+	
+func store_game_state() -> void:
+	var last_level_path = get_tree().current_scene.filename
+	print(last_level_path)
+	StateHandlerInstance.set_item('stage', last_level_path).save_state()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("restart_level"):
@@ -22,3 +27,4 @@ func _restart() -> void:
 
 func _ready() -> void:
 	set_player_camera_limits()
+	store_game_state()
