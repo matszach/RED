@@ -4,9 +4,9 @@ class_name MainMenu
 
 func _ready() -> void:
 	disable_ContibuteButton_if_needed()
+	MusicPlayerInstance.start()
 
 func disable_ContibuteButton_if_needed() -> void:
-	print(StateHandlerInstance.state)
 	if not 'stage' in StateHandlerInstance.state:
 		$ButtonsVBox/ContinueButton.disabled = true
 
