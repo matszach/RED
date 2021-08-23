@@ -15,7 +15,6 @@ func set_player_camera_limits() -> void:
 	
 func store_game_state() -> void:
 	var last_level_path = get_tree().current_scene.filename
-	print(last_level_path)
 	StateHandlerInstance.set_item('stage', last_level_path).save_state()
 
 func _process(delta: float) -> void:

@@ -5,6 +5,7 @@ class_name Turret
 onready var player_ref: Player
 onready var gun: Node = $Gun
 onready var shoot_timer: Timer = $Gun/Timer
+onready var shoot_audio: AudioStreamPlayer2D = $ShootAudioPlayer
 onready var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 onready var angle_offset: float = transform.get_rotation()
 export var rotation_rate: float = 0.03
@@ -33,6 +34,7 @@ func sees_player() -> bool:
 func shoot() -> void:
 	if shoot_timer.time_left <= 0:
 		fire_bullet()
+		play_sound()
 		shoot_timer.start(fire_rate)
 		
 func fire_bullet() -> void:
@@ -41,6 +43,10 @@ func fire_bullet() -> void:
 	get_tree().get_root().add_child(projectile)
 	var shoot_direction = gun.rotation - PI/4 + rng.randf_range(-bullet_spread, bullet_spread) + angle_offset
 	projectile.fire(shoot_direction)
+	
+func play_sound() -> void: 
+	shoot_audio.pitch_scale = rng.randf_range(0.8, 1.2)
+	shoot_audio.playing = true
 	
 func idle_rotate() -> void:
 	gun.rotation += rotation_rate/3 * (1 if clockwise else -1)

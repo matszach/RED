@@ -27,7 +27,7 @@ func save_state() -> StateHandler:
 
 func load_state() -> void:
 	var file = File.new()
-	if file.file_exists(path):	
+	if file.file_exists(path):
 		file.open(path, File.READ)
 		var line: String = file.get_line()
 		state = parse_json(line)

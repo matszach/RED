@@ -15,6 +15,6 @@ func _on_CollisionShape2D_body_entered(body: Node) -> void:
 func _on_CollisionShape2D_body_exited(body: Node) -> void:
 	bodies_over.erase(body)
 	_update_state()
-
+	
 func _update_state() -> void:
 	pass

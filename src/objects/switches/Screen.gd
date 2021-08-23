@@ -7,6 +7,7 @@ export var relative_placement: Vector2 = Vector2(0, 0)
 onready var label_holder: Node2D = $LabelHolder
 onready var label: RichTextLabel = $LabelHolder/RichTextLabel
 onready var animation_player: AnimationPlayer = $AnimationPlayerText
+onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	var value = DialogReaderInstance.get(value_key);
@@ -17,6 +18,7 @@ func _ready() -> void:
 
 func _on_PlayerNearbyDetector_body_entered(body: Node) -> void:
 	animation_player.playback_speed = 1	
+	audio.playing = true
 	animation_player.play("show_text")
 
 func _on_PlayerNearbyDetector_body_exited(body: Node) -> void:

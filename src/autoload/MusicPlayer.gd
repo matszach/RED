@@ -7,6 +7,10 @@ onready var songs: RingArray = RingArray.new().init([
 	'res://assets/music/02.wav'	
 ])
 
+func _ready() -> void:
+	volume_db = -3
+	start()
+
 func start() -> void:
 	play_next()
 	connect('finished', self, 'play_next')

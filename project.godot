@@ -89,6 +89,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/objects/switches/Screen.gd"
 }, {
+"base": "AudioStreamPlayer",
+"class": "SoundFX",
+"language": "GDScript",
+"path": "res://src/autoload/SoundFX.gd"
+}, {
 "base": "Node",
 "class": "StateHandler",
 "language": "GDScript",
@@ -136,6 +141,7 @@ _global_script_class_icons={
 "Pushable": "",
 "RingArray": "",
 "Screen": "",
+"SoundFX": "",
 "StateHandler": "",
 "SwitchObject": "",
 "SwitchObjectButton": "",
@@ -155,6 +161,7 @@ config/icon="res://icon.png"
 DialogReaderInstance="*res://src/autoload/DialogReader.gd"
 StateHandlerInstance="*res://src/autoload/StateHandler.gd"
 MusicPlayerInstance="*res://src/autoload/MusicPlayer.gd"
+SoundFXInstance="*res://src/autoload/SoundFX.gd"
 
 [display]
 

@@ -10,5 +10,5 @@ func _update_state() -> void:
 		_block_state = false
 	elif not _block_state:
 		_block_state = true
-		state = not state
+		set_state(not state)
 		$button.frame = 5 if state else 4

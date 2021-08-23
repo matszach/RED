@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/screen.png" type="Texture" id=1]
 [ext_resource path="res://src/objects/switches/Screen.gd" type="Script" id=2]
 [ext_resource path="res://res/font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/sounds/screen.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "text_animation"
@@ -52,6 +53,9 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 hframes = 4
 frame = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
 
 [node name="AnimationPlayerSprite" type="AnimationPlayer" parent="."]
 autoplay = "text_animation"

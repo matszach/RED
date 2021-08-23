@@ -22,5 +22,6 @@ func _slide() -> void:
 
 func _bounce() -> void:
 	if is_on_wall() and timer.time_left <= 0:
+		push_audio.playing = true
 		flip = not flip
 		timer.start(0.1)
