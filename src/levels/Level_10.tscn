@@ -48,21 +48,25 @@ position = Vector2( 352, 672 )
 
 [node name="Turret" parent="Characters" instance=ExtResource( 7 )]
 position = Vector2( 1056, 416 )
-rotation = -1.57079
+rotation = 1.5708
 clockwise = false
+disable_rotate = true
 
 [node name="Turret2" parent="Characters" instance=ExtResource( 7 )]
 position = Vector2( 1248, 416 )
-rotation = -1.5708
+rotation = 1.5708
+disable_rotate = true
 
 [node name="Turret3" parent="Characters" instance=ExtResource( 7 )]
 position = Vector2( 1056, 928 )
-rotation = 1.5708
+rotation = -1.5708
+disable_rotate = true
 
 [node name="Turret4" parent="Characters" instance=ExtResource( 7 )]
 position = Vector2( 1248, 928 )
-rotation = 1.5708
+rotation = -1.5708
 clockwise = false
+disable_rotate = true
 
 [node name="Pushables" type="Node" parent="."]
 

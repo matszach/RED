@@ -3,7 +3,7 @@ extends Area2D
 class_name TurretProjectile
 
 onready var timer: Timer = $Timer
-export var speed: float = 800
+export var speed: float = 900
 export var duration: float = 0.05
 var velocity: Vector2 = Vector2(0, 0)
 

@@ -41,8 +41,10 @@ position = Vector2( 50, 0 )
 collision_layer = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gun/SightRange"]
+modulate = Color( 0, 1, 0.298039, 0.619608 )
 position = Vector2( 1, 0 )
 polygon = PoolVector2Array( 370, -650, 650, -370, 750, 0, 650, 370, 370, 650, 0, 0 )
+one_way_collision = true
 
 [connection signal="body_entered" from="Gun/SightRange" to="." method="_on_SightRange_body_entered"]
 [connection signal="body_exited" from="Gun/SightRange" to="." method="_on_SightRange_body_exited"]

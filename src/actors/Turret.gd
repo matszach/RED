@@ -12,6 +12,7 @@ export var rotation_rate: float = 0.03
 export var fire_rate: float = 0.10
 export var clockwise: bool = true
 export var bullet_spread: float = PI/30
+export var disable_rotate: bool = false
 
 func rotate_towards_player() -> bool:
 	var dir = position.direction_to(player_ref.position)
@@ -49,7 +50,8 @@ func play_sound() -> void:
 	shoot_audio.playing = true
 	
 func idle_rotate() -> void:
-	gun.rotation += rotation_rate/3 * (1 if clockwise else -1)
+	if not disable_rotate:
+		gun.rotation += rotation_rate/3 * (1 if clockwise else -1)
 
 func _process(delta: float) -> void:
 	if player_ref and sees_player() and rotate_towards_player():
