@@ -20,6 +20,8 @@ func store_game_state() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("restart_level"):
 		_restart()
+	if Input.is_action_just_pressed("to_menu"):
+		get_tree().change_scene('res://src/screens/MainMenu.tscn')
 	
 func _restart() -> void:
 	get_tree().reload_current_scene()
