@@ -40,38 +40,46 @@ rotation = -3.14159
 [node name="Turret" parent="Characters" instance=ExtResource( 2 )]
 position = Vector2( -179, 202 )
 rotation = 1.5708
+disable_rotate = true
 
 [node name="Turret2" parent="Characters" instance=ExtResource( 2 )]
 position = Vector2( -435, 201 )
 rotation = 1.5708
 clockwise = false
+disable_rotate = true
 
 [node name="Turret3" parent="Characters" instance=ExtResource( 2 )]
 position = Vector2( -691, 202 )
 rotation = 1.5708
+disable_rotate = true
 
 [node name="Turret4" parent="Characters" instance=ExtResource( 2 )]
 position = Vector2( -947, 201 )
 rotation = 1.5708
 clockwise = false
+disable_rotate = true
 
 [node name="Turret5" parent="Characters" instance=ExtResource( 2 )]
 position = Vector2( -179, 1418 )
 rotation = -1.5708
+disable_rotate = true
 
 [node name="Turret6" parent="Characters" instance=ExtResource( 2 )]
 position = Vector2( -435, 1417 )
 rotation = -1.5708
 clockwise = false
+disable_rotate = true
 
 [node name="Turret7" parent="Characters" instance=ExtResource( 2 )]
 position = Vector2( -691, 1418 )
 rotation = -1.5708
+disable_rotate = true
 
 [node name="Turret8" parent="Characters" instance=ExtResource( 2 )]
 position = Vector2( -947, 1417 )
 rotation = -1.5708
 clockwise = false
+disable_rotate = true
 
 [node name="Pushables" type="Node" parent="."]
 
