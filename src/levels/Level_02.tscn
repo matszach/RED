@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/levels/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://res/tileset.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/objects/switches/ClickButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/objects/doors/DoorLarge.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/levels/Level_03.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/objects/switches/Screen.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/objects/switches/LevelExit.tscn" type="PackedScene" id=21]
 
 [node name="Level_02" type="Node2D"]
@@ -49,3 +50,9 @@ switches = [ NodePath("../../Buttons/ClickButton") ]
 
 [node name="Lamp" parent="Decor" instance=ExtResource( 4 )]
 position = Vector2( 864, 264 )
+
+[node name="Screen" parent="Decor" instance=ExtResource( 8 )]
+position = Vector2( 736, 424 )
+rotation = 3.14159
+value_key = "02_01"
+relative_placement = Vector2( -202, 40 )

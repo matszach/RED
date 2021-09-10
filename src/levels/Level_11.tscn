@@ -14,7 +14,7 @@
 [ext_resource path="res://src/levels/BaseLevel.gd" type="Script" id=22]
 
 [node name="Level_11" type="Node2D"]
-position = Vector2( 13, 7 )
+position = Vector2( 3, -4 )
 script = ExtResource( 22 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -27,36 +27,36 @@ tile_data = PoolIntArray( -196614, 0, 0, -196613, 0, 1, -196612, 0, 1, -196611, 
 [node name="LevelExit" type="Node" parent="."]
 
 [node name="LevelExit" parent="LevelExit" instance=ExtResource( 8 )]
-position = Vector2( 1248, 992 )
+position = Vector2( 1251, 988 )
 next_level = ExtResource( 9 )
 
 [node name="Buttons" type="Node" parent="."]
 
 [node name="PressureButton" parent="Buttons" instance=ExtResource( 4 )]
-position = Vector2( 1120, 352 )
+position = Vector2( 1123, 348 )
 
 [node name="Characters" type="Node" parent="."]
 
 [node name="Player" parent="Characters" instance=ExtResource( 16 )]
-position = Vector2( 352, 352 )
+position = Vector2( 355, 348 )
 rotation = 1.5708
 
 [node name="Turret" parent="Characters" instance=ExtResource( 1 )]
-position = Vector2( 672, 96 )
+position = Vector2( 675, 92 )
 rotation = -1.5708
 
 [node name="Turret2" parent="Characters" instance=ExtResource( 1 )]
-position = Vector2( 800, 96 )
+position = Vector2( 803, 92 )
 rotation = 1.5708
 clockwise = false
 
 [node name="Pushables" type="Node" parent="."]
 
 [node name="PushableCrate1x3" parent="Pushables" instance=ExtResource( 2 )]
-position = Vector2( 736, 864 )
+position = Vector2( 739, 860 )
 
 [node name="PushableCrate1x1" parent="Pushables" instance=ExtResource( 3 )]
-position = Vector2( 736, 928 )
+position = Vector2( 739, 924 )
 rotation = 1.5708
 dampen_ratio = 0.9
 bounceback_ratio = 0.1
@@ -64,7 +64,7 @@ bounceback_ratio = 0.1
 [node name="Doors" type="Node" parent="."]
 
 [node name="DoorLarge" parent="Doors" instance=ExtResource( 6 )]
-position = Vector2( 992, 992 )
+position = Vector2( 995, 988 )
 rotation = 1.5708
 slide_by = Vector2( 0, -192 )
 switches = [ NodePath("../../Buttons/PressureButton") ]
@@ -72,13 +72,13 @@ switches = [ NodePath("../../Buttons/PressureButton") ]
 [node name="Decor" type="Node" parent="."]
 
 [node name="Lamp2" parent="Decor" instance=ExtResource( 7 )]
-position = Vector2( 736, 96 )
+position = Vector2( 739, 92 )
 
 [node name="Lamp" parent="Decor" instance=ExtResource( 7 )]
-position = Vector2( 736, 1056 )
+position = Vector2( 739, 1052 )
 
 [node name="Plant" parent="Decor" instance=ExtResource( 5 )]
-position = Vector2( 288, 1056 )
+position = Vector2( 291, 1052 )
 
 [node name="Plant2" parent="Decor" instance=ExtResource( 5 )]
-position = Vector2( 928, 288 )
+position = Vector2( 931, 284 )
