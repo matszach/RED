@@ -4,12 +4,12 @@
 [ext_resource path="res://assets/moving_pushable.png" type="Texture" id=2]
 
 [sub_resource type="OccluderPolygon2D" id=1]
-polygon = PoolVector2Array( -60, -28, 60, -28, 60, 28, -60, 28 )
+polygon = PoolVector2Array( -92, -28, 92, -28, 92, 28, -92, 28 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 62, 30 )
+extents = Vector2( 94, 30 )
 
-[node name="MovingCrate1x2" type="KinematicBody2D"]
+[node name="MovingCrate1x3" type="KinematicBody2D"]
 light_mask = 4
 collision_layer = 4
 collision_mask = 15
@@ -18,10 +18,10 @@ script = ExtResource( 1 )
 [node name="moving_pushable" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 0, 128, 128, 64 )
+region_rect = Rect2( 128, 192, 192, 64 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -50, -28, 50, -28, 60, -23, 60, 23, 50, 28, -50, 28, -60, 23, -60, -23 )
+polygon = PoolVector2Array( -77, -28, 77, -28, 92, -23, 92, 23, 77, 28, -77, 28, -92, 23, -92, -23 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 1 )

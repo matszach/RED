@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/objects/decor/Lamp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/objects/decor/PillarSmall.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/objects/switches/PressureButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/objects/decor/Plant.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/levels/Level_05.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/objects/switches/Screen.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/actors/Player.tscn" type="PackedScene" id=16]
 [ext_resource path="res://res/tileset.tres" type="TileSet" id=21]
 [ext_resource path="res://src/levels/BaseLevel.gd" type="Script" id=22]
@@ -81,3 +82,9 @@ position = Vector2( 640, 864 )
 [node name="Plant" parent="Decor" instance=ExtResource( 7 )]
 position = Vector2( 736, 1025 )
 rotation = 1.5708
+
+[node name="Screen" parent="Decor" instance=ExtResource( 9 )]
+position = Vector2( 608, 1257 )
+rotation = 3.14159
+value_key = "04_01"
+relative_placement = Vector2( -5, 40 )
